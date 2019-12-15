@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var height = prompt('Введите высоту треугольника');
+        var symbol = prompt('Введите символ из которого будет состоять треугольник');
+
+        if (symbol.length > 1) {
+            alert('Необходимо ввести один символ');
+        }
+        else {
+            showTriangle(height, symbol);
+        }
+
+        function showTriangle(height, symbol) {
+
+        var string = '';
+
+        for (var i = 1; i <= height; i++) {
+    
+            for (var n = 0; n < i; n++) {
+                string += symbol;
+            }
+
+            string += '\n';
+        }
+
+        return alert(string);
+        }
+    </script>
+</body>
+</html>
