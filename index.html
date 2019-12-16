@@ -33,6 +33,27 @@
 
         return alert(string);
         }
+        
+        function getResult(x, y) {
+            return x - y; 
+        }
+
+        function f(a = 2, b = 3, c) {
+            function sum(a, b) {
+                return a+b;
+            }
+            if ((typeof(c) == 'function') && (c != undefined)) {
+                return c;
+            } else {
+                return sum(a, b);
+            }
+        }
+
+        var result = 0;
+
+        result = f(4, 4, getResult(5, 2));
+
+        console.log(result);
     </script>
 </body>
 </html>
