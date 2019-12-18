@@ -8,30 +8,30 @@
 </head>
 <body>
     <script>
+
         var height = prompt('Введите высоту треугольника');
         var symbol = prompt('Введите символ из которого будет состоять треугольник');
 
         if (symbol.length > 1) {
             alert('Необходимо ввести один символ');
-        }
-        else {
+        } else {
             showTriangle(height, symbol);
         }
 
         function showTriangle(height, symbol) {
 
-        var string = '';
+            var triangle = '';
 
-        for (var i = 1; i <= height; i++) {
-    
-            for (var n = 0; n < i; n++) {
-                string += symbol;
+            for (var i = 0; i < height; i++) {
+        
+                for (var n = 0; n < i; n++) {
+                    triangle += symbol;
+                }
+
+                triangle += '\n';
             }
 
-            string += '\n';
-        }
-
-        return alert(string);
+            return alert(triangle);
         }
         
         //Переписать функцию
@@ -41,15 +41,26 @@
         }
 
         function f(a = 2, b = 3, c) {
+            
             function sum(a, b) {
                 return a+b;
             }
-            if ((typeof(c) === 'function') && (c != undefined)) {
-                return c;
-            } else {
-                return sum(a, b);
+
+            c = function() {
+                return 23+34;
             }
+            
+            var result = 0;
+            
+            if ((typeof(c) === 'function') && (c != undefined)) {
+                result = c();
+            } else {
+                result = sum(a, b);
+            }
+
+            return(result);
         }
+        console.log(f());
     </script>
 </body>
 </html>
